@@ -25,7 +25,7 @@ export default function AboutMe() {
                                     <img
                                         alt="Professional portrait"
                                         className="w-full h-full object-cover grayscale contrast-125 opacity-80"
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeFuvqArbRLy2pjk-0kWOeLDvwRjf_XleunU-JNykcjdFuE9neyLR4Tl5GYlMZ0xjcTY95GOXU4fFixqearC2uxXEGUoWrAqltAbGBTqnCcPIcOJkUMoHOWvxLPNiFo64bc5gwt5D4AQoc_0wq8cd8LuNyWuE3oRrFNE_NrZbUOV1LKmXh65Ta2YBHQpWeNGQHaTiIHlaoL6qsTHbGyFwlJgMAsTRD456uLRS_JQ_jef5DMgWk1N2KmxmCWy9I91Syyo82Mlm8GjB8"
+                                        src="/profile.jpg"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-background-dark-stitch via-transparent to-transparent"></div>
                                 </div>

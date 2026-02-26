@@ -97,10 +97,8 @@ const projects: Project[] = [
 export default function StitchProjects() {
     const [filter, setFilter] = useState<"TODOS" | "FULLSTACK" | "BACKEND - API">("TODOS");
 
-    // Ordenar projetos: 2026 primeiro
-    const sortedProjects = useMemo(() => {
-        return [...projects].sort((a, b) => b.year - a.year);
-    }, []);
+    // Lista de projetos na ordem definida
+    const sortedProjects = useMemo(() => [...projects], []);
 
     const filteredProjects = useMemo(() => {
         if (filter === "TODOS") return sortedProjects;

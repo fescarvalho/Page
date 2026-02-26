@@ -31,16 +31,6 @@ const projects: Project[] = [
         image: "/projects/servas.png"
     },
     {
-        id: 5,
-        title: "Stitch-Shop",
-        description: "E-commerce moderno com foco em UX/UI, utilizando os padrões de design mais recentes e performance otimizada.",
-        tags: ["TypeScript", "React", "Stitch"],
-        category: "fullstack",
-        year: 2026,
-        githubUrl: "https://github.com/fescarvalho/Stitch-Shop",
-        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB3ZWgYKiz6v2pH1UJzTvIZgmNybSkcX-WVEYHF3-fUzwqouaFdrv5QoYpRHaVOicom2ry6rwQhArKpss_B6VlMTozV0rCO_qNFHpEM0JYQClb6tcFz7_zU2VaAc2djzjk4OVpjf5HJNYnkWJu1mhXDxoFyb6dVwg2RrYQCZ8Q9x5tOcf0y67oIOsZQhmZ1dRFYJfJYFCV_bWZJWDZv8_Xb09AEX5sk0a7u68oAjOzz2ZtTPV04cw9nvD7xnxt5BZhmVH4cKBshtFn2"
-    },
-    {
         id: 2,
         title: "Isa Sushi — PDV Online",
         description: "Plataforma completa no estilo E-commerce / Ponto de Venda focada em delivery, com integração ao WhatsApp e pagamento via Pix.",
@@ -79,6 +69,28 @@ const projects: Project[] = [
         category: "backend",
         year: 2024,
         githubUrl: "https://github.com/fescarvalho/API-Supermarke-List",
+    },
+    {
+        id: 7,
+        title: "Dogs - Rede Social",
+        description: "Rede social exclusiva para cachorros. Compartilhe fotos do seu pet e interaja com a comunidade.",
+        tags: ["React", "API", "CSS"],
+        category: "fullstack",
+        year: 2023,
+        githubUrl: "https://github.com/fescarvalho/Dogs",
+        externalUrl: "https://dogs-social.vercel.app/",
+        image: "/projects/dogs.png"
+    },
+    {
+        id: 8,
+        title: "Bikcraft",
+        description: "Plataforma de portfólio e informações para bicicletas elétricas customizadas feitas sob medida.",
+        tags: ["React", "CSS", "UI/UX"],
+        category: "fullstack",
+        year: 2023,
+        githubUrl: "https://github.com/fescarvalho/bikcraft",
+        externalUrl: "https://bikcraftmotors.netlify.app/",
+        image: "/projects/bikecraft.png"
     }
 ];
 

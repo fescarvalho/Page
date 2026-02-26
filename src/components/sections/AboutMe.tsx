@@ -1,84 +1,104 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Coffee, Code, Brain, MapPin } from "lucide-react";
 
 export default function AboutMe() {
-    const stats = [
-        { label: "Anos de Exp", value: "3+", icon: Code },
-        { label: "Cafés/Dia", value: "∞", icon: Coffee },
-        { label: "Projetos", value: "40+", icon: Brain },
-        { label: "Local", value: "Brasil", icon: MapPin },
-    ];
-
     return (
-        <section id="about" className="py-24 relative z-10 overflow-hidden">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col items-center text-center gap-16">
-                    {/* Visual Element: Profile Mockup */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="relative w-full max-w-md aspect-square"
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-cyan/20 to-purple/20 rounded-3xl blur-2xl" />
-                        <div className="relative h-full w-full rounded-3xl border border-white/10 bg-surface/50 backdrop-blur-sm overflow-hidden flex items-center justify-center group">
-                            <User size={160} className="text-cyan opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+        <section id="about" className="relative py-24 w-full bg-background overflow-hidden border-b border-white/5">
+            {/* Grid Overlay inside the section */}
+            <div className="absolute inset-0 grid-overlay opacity-60 pointer-events-none"></div>
 
-                            {/* Floating Stats */}
-                            <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
-                                {stats.slice(0, 2).map((stat, i) => (
-                                    <div key={i} className="bg-background/80 backdrop-blur-md p-3 rounded-xl border border-white/5">
-                                        <div className="flex items-center gap-2 text-cyan mb-1 font-mono text-xs uppercase opacity-70 justify-center">
-                                            <stat.icon size={12} />
-                                            <span>{stat.label}</span>
+            <div className="container mx-auto px-6 relative z-10">
+                <main className="w-full max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-10 gap-16 items-center">
+
+                        {/* Profile Image Column */}
+                        <div className="md:col-span-4 flex justify-center">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                className="relative group w-full max-w-sm"
+                            >
+                                <div className="absolute -inset-1 bg-primary-stitch/30 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-primary-stitch/40 neon-border bg-slate-800">
+                                    <img
+                                        alt="Professional portrait"
+                                        className="w-full h-full object-cover grayscale contrast-125 opacity-80"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeFuvqArbRLy2pjk-0kWOeLDvwRjf_XleunU-JNykcjdFuE9neyLR4Tl5GYlMZ0xjcTY95GOXU4fFixqearC2uxXEGUoWrAqltAbGBTqnCcPIcOJkUMoHOWvxLPNiFo64bc5gwt5D4AQoc_0wq8cd8LuNyWuE3oRrFNE_NrZbUOV1LKmXh65Ta2YBHQpWeNGQHaTiIHlaoL6qsTHbGyFwlJgMAsTRD456uLRS_JQ_jef5DMgWk1N2KmxmCWy9I91Syyo82Mlm8GjB8"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-background-dark-stitch via-transparent to-transparent"></div>
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* Content Column */}
+                        <div className="md:col-span-6 flex flex-col gap-10">
+                            <motion.div
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="space-y-6"
+                            >
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-stitch/10 border border-primary-stitch/20">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-stitch opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-stitch"></span>
+                                    </span>
+                                    <span className="text-[10px] font-bold text-primary-stitch tracking-widest uppercase">Visão de Especialista</span>
+                                </div>
+                                <div className="space-y-2">
+                                    <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] font-display">
+                                        Analista de Sistemas <br />
+                                        <span className="text-primary-stitch">& Desenvolvedor</span>
+                                    </h1>
+                                    <div className="h-1.5 w-24 bg-primary-stitch rounded-full"></div>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.1 }}
+                                className="space-y-6 max-w-2xl"
+                            >
+                                <p className="text-xl text-slate-300 leading-relaxed">
+                                    Com uma sólida base em análise de sistemas e desenvolvimento escalável, utilizo minha expertise em <span className="text-white font-semibold">Ciência de Dados</span> para oferecer vantagens estratégicas em cada projeto. Minha abordagem combina precisão técnica com profundidade analítica para resolver desafios arquiteturais complexos.
+                                </p>
+                                <p className="text-slate-400">
+                                    Atualmente focado em construir sistemas de alta performance com ênfase estratégica em inteligência de dados e resiliência arquitetural.
+                                </p>
+                            </motion.div>
+
+                            {/* Skills Grid */}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                                {[
+                                    { icon: "architecture", title: "Arquitetura de Sistemas", desc: "Projetando estruturas resilientes" },
+                                    { icon: "layers", title: "Desenvolvimento Escalável", desc: "Construindo para crescimento massivo" },
+                                    { icon: "monitoring", title: "Inteligência de Dados", desc: "Soluções guiadas por insights" }
+                                ].map((skill, i) => (
+                                    <motion.div
+                                        key={skill.title}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.2 + i * 0.1 }}
+                                        className="flex flex-col gap-4 p-6 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm hover:border-primary-stitch/50 transition-all group"
+                                    >
+                                        <span className="material-symbols-outlined text-primary-stitch text-4xl group-hover:scale-110 transition-transform">
+                                            {skill.icon}
+                                        </span>
+                                        <div>
+                                            <h3 className="font-bold text-white text-lg leading-tight">{skill.title}</h3>
+                                            <p className="text-slate-500 text-xs mt-1">{skill.desc}</p>
                                         </div>
-                                        <div className="text-xl font-heading font-bold text-foreground">{stat.value}</div>
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>
-                    </motion.div>
-
-                    {/* Content */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="max-w-3xl"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
-                            Sobre Mim
-                        </h2>
-                        <div className="h-1 w-20 bg-cyan rounded-full shadow-[0_0_10px_rgba(0,255,194,0.5)] mb-8 mx-auto"></div>
-
-                        <div className="space-y-6 text-foreground/80 leading-relaxed font-sans text-lg">
-                            <p>
-                                Sou um <span className="text-cyan font-mono">Software Engineer & Data Scientist</span> apaixonado por transformar dados complexos em experiências digitais impactantes.
-                            </p>
-                            <p>
-                                Minha trajetória é marcada pela união de rigidez matemática e criatividade técnica. Trabalho no desenvolvimento de aplicações robustas e escaláveis, sempre com um olhar atento à análise de dados para otimizar processos e decisões.
-                            </p>
-                            <p>
-                                Acredito que o código é uma ferramenta para resolver problemas reais e a ciência de dados é o que nos permite medir e potencializar essas soluções.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
-                            {stats.map((stat, i) => (
-                                <div key={i} className="text-center p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-cyan/30 transition-colors group">
-                                    <div className="text-cyan mx-auto mb-2 flex justify-center group-hover:scale-110 transition-transform">
-                                        <stat.icon size={20} />
-                                    </div>
-                                    <div className="text-lg font-bold text-foreground">{stat.value}</div>
-                                    <div className="text-[10px] text-foreground/40 uppercase tracking-widest font-mono font-bold mt-1">{stat.label}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </main>
             </div>
         </section>
     );

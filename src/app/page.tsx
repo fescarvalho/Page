@@ -1,8 +1,9 @@
 import GlobalBackground from "@/components/canvas/GlobalBackground";
 import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
-import ProjectsBentoGrid from "@/components/sections/ProjectsBentoGrid";
-import EcosystemDashboard from "@/components/sections/SkillsGlobe";
+import StitchProjects from "@/components/sections/StitchProjects";
+import TechnicalArsenal from "@/components/sections/TechnicalArsenal";
+import Contact from "@/components/sections/Contact";
 import { Github, Linkedin, Instagram } from "lucide-react";
 
 export default function Home() {
@@ -11,8 +12,9 @@ export default function Home() {
       <GlobalBackground />
       <Hero />
       <AboutMe />
-      <ProjectsBentoGrid />
-      <EcosystemDashboard />
+      <StitchProjects />
+      <TechnicalArsenal />
+      <Contact />
 
       <footer className="py-12 border-t border-white/5 relative z-10 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">

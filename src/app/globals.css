@@ -6,6 +6,11 @@
   --color-surface: var(--surface);
   --color-cyan: var(--accent-cyan);
   --color-purple: var(--accent-purple);
+  --color-primary-stitch: #2b8cee;
+  --color-background-light-stitch: #f6f7f8;
+  --color-background-dark-stitch: #101922;
+  --color-surface-dark-stitch: #1a2632;
+  --color-surface-light-stitch: #ffffff;
   --font-sans: var(--font-inter);
   --font-heading: var(--font-space-grotesk);
   --font-mono: var(--font-jetbrains-mono);
@@ -98,4 +103,14 @@ body::before {
   opacity: 0.05;
   pointer-events: none;
   z-index: 999;
+}
+
+/* Custom Utilities for New Sections */
+.grid-overlay {
+  background-image: radial-gradient(circle at 2px 2px, rgba(43, 140, 238, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.neon-border {
+  box-shadow: 0 0 15px rgba(43, 140, 238, 0.3), inset 0 0 10px rgba(43, 140, 238, 0.2);
 }

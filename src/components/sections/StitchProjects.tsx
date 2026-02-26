@@ -19,6 +19,17 @@ interface Project {
 
 const projects: Project[] = [
     {
+        id: 2,
+        title: "Isa Sushi — PDV Online",
+        description: "Plataforma completa no estilo E-commerce / Ponto de Venda focada em delivery, com integração ao WhatsApp e pagamento via Pix.",
+        tags: ["Next.js", "TypeScript", "React"],
+        category: "fullstack",
+        year: 2025,
+        githubUrl: "https://github.com/fescarvalho/isasuhi-NEXT",
+        externalUrl: "https://isasushidelivery.vercel.app/",
+        image: "/projects/isasushi.png"
+    },
+    {
         id: 1,
         title: "Servas — Gestão de Escalas",
         description: "Sistema de Gestão de Escalas e Engajamento de Servas para o Santuário Diocesano Nossa Senhora da Natividade. Arquitetura robusta para alta disponibilidade.",
@@ -29,17 +40,6 @@ const projects: Project[] = [
         githubUrl: "https://github.com/fescarvalho/ServasProjeto",
         externalUrl: "https://servasdoaltar.vercel.app/",
         image: "/projects/servas.png"
-    },
-    {
-        id: 2,
-        title: "Isa Sushi — PDV Online",
-        description: "Plataforma completa no estilo E-commerce / Ponto de Venda focada em delivery, com integração ao WhatsApp e pagamento via Pix.",
-        tags: ["Next.js", "TypeScript", "React"],
-        category: "fullstack",
-        year: 2025,
-        githubUrl: "https://github.com/fescarvalho/isasuhi-NEXT",
-        externalUrl: "https://isasushidelivery.vercel.app/",
-        image: "/projects/isasushi.png"
     },
     {
         id: 3,

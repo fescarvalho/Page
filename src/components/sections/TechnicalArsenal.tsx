@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Terminal, CheckCircle2 } from "lucide-react";
 
 const skills = [
-    { name: "TypeScript", level: "Advanced", icon: "https://cdn.simpleicons.org/typescript", pos: "top-[20%] left-1/2 -translate-x-1/2" },
+    { name: "Next.js", level: "Expert Level", icon: "https://cdn.simpleicons.org/nextdotjs/white", pos: "top-[20%] left-1/2 -translate-x-1/2" },
     { name: "Node.js", level: "Expert Level", icon: "https://cdn.simpleicons.org/nodedotjs/339933", pos: "top-[35%] left-[80%] -translate-x-1/2" },
     { name: "Tailwind", level: "Expert Level", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4", pos: "top-[65%] left-[85%] -translate-x-1/2" },
     { name: "AWS", level: "Advanced", icon: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg", pos: "top-[85%] left-[65%] -translate-x-1/2" },
@@ -116,13 +116,13 @@ export default function TechnicalArsenal() {
                             <div className="relative size-32 md:size-40 rounded-full bg-[#1a2632] border-2 border-primary-stitch/50 flex items-center justify-center shadow-[0_0_50px_rgba(43,140,238,0.3)] transition-transform duration-500 hover:scale-110">
                                 <div className="absolute inset-0 rounded-full bg-primary-stitch/10 scale-125 animate-pulse"></div>
                                 <img
-                                    alt="Next.js"
-                                    className="w-20 h-20 md:w-24 md:h-24 object-contain relative z-10 brightness-0 invert"
-                                    src="https://cdn.simpleicons.org/nextdotjs/white"
+                                    alt="TypeScript"
+                                    className="w-20 h-20 md:w-24 md:h-24 object-contain relative z-10"
+                                    src="https://cdn.simpleicons.org/typescript"
                                 />
                                 <div className="absolute -bottom-12 flex flex-col items-center whitespace-nowrap">
-                                    <span className="text-white font-bold text-xl drop-shadow-md">Next.js</span>
-                                    <span className="text-primary-stitch text-[10px] uppercase font-bold tracking-widest bg-primary-stitch/20 px-2 rounded border border-primary-stitch/30">Expert Level</span>
+                                    <span className="text-white font-bold text-xl drop-shadow-md">TypeScript</span>
+                                    <span className="text-primary-stitch text-[10px] uppercase font-bold tracking-widest bg-primary-stitch/20 px-2 rounded border border-primary-stitch/30">Advanced</span>
                                 </div>
                             </div>
                         </motion.div>

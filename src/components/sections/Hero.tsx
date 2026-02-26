@@ -1,80 +1,13 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { MeshTransmissionMaterial, Environment } from "@react-three/drei";
-import * as THREE from "three";
 import { motion } from "framer-motion";
-
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
-
-function TextScramble({ text }: { text: string }) {
-    const [displayText, setDisplayText] = useState("");
-
-    useEffect(() => {
-        let iteration = 0;
-        let interval: NodeJS.Timeout;
-
-        const startAnimation = () => {
-            interval = setInterval(() => {
-                setDisplayText((prev) =>
-                    text
-                        .split("")
-                        .map((char, index) => {
-                            if (index < iteration) {
-                                return text[index];
-                            }
-                            return letters[Math.floor(Math.random() * letters.length)];
-                        })
-                        .join("")
-                );
-
-                if (iteration >= text.length) {
-                    clearInterval(interval);
-                }
-
-                iteration += 1 / 3;
-            }, 30);
-        };
-
-        startAnimation();
-        return () => clearInterval(interval);
-    }, [text]);
-
-    return <span>{displayText}</span>;
-}
-
-function AbstractObject() {
-    const meshRef = useRef<THREE.Mesh>(null);
-
-    useFrame((state, delta) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.x += delta * 0.2;
-            meshRef.current.rotation.y += delta * 0.3;
-        }
-    });
-
-    return (
-        <mesh ref={meshRef}>
-            <icosahedronGeometry args={[2, 0]} />
-            <MeshTransmissionMaterial
-                backside
-                samples={4}
-                thickness={1}
-                chromaticAberration={0.5}
-                anisotropy={0.1}
-                distortion={0.5}
-                distortionScale={0.5}
-                temporalDistortion={0.1}
-                color="#00FFC2"
-            />
-        </mesh>
-    );
-}
+import { Github, Linkedin, Instagram } from "lucide-react";
+import TextScramble from "@/components/ui/TextScramble";
+import WordCloud from "@/components/canvas/WordGlobe";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#0A0C10]">
             <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -85,7 +18,10 @@ export default function Hero() {
                     <h2 className="text-cyan font-mono mb-4 tracking-widest uppercase text-sm">
                         Terminal Inicializado
                     </h2>
-                    <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6 leading-tight">
+                    <h1
+                        className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6 leading-tight"
+                        aria-label="Engenharia de Software & Ciência de Dados"
+                    >
                         <TextScramble text="Engenharia de" />
                         <br />
                         <TextScramble text="Software &" />
@@ -97,23 +33,30 @@ export default function Hero() {
                     <p className="text-lg md:text-xl text-foreground/70 font-sans max-w-xl mb-8">
                         Construo pontes entre a engenharia de software e a inteligência de dados com interfaces modernas e alta performance.
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap items-center gap-6">
                         <a
                             href="#projects"
                             className="px-8 py-3 bg-cyan/10 border border-cyan text-cyan font-mono rounded-sm hover:bg-cyan/20 transition-all shadow-[0_0_15px_rgba(0,255,194,0.3)] hover:shadow-[0_0_25px_rgba(0,255,194,0.5)]"
                         >
                             Explorar.Projetos()
                         </a>
+
+                        <div className="flex gap-5 text-foreground/50">
+                            <a href="https://github.com/fescarvalho" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
+                                <Github size={24} />
+                            </a>
+                            <a href="https://linkedin.com/in/fescarvalho" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
+                                <Linkedin size={24} />
+                            </a>
+                            <a href="https://instagram.com/fescarvalho" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
+                                <Instagram size={24} />
+                            </a>
+                        </div>
                     </div>
                 </motion.div>
 
                 <div className="hidden lg:block h-[500px] w-full relative z-10">
-                    <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-                        <ambientLight intensity={0.5} />
-                        <directionalLight position={[10, 10, 10]} intensity={1} />
-                        <Environment preset="city" />
-                        <AbstractObject />
-                    </Canvas>
+                    <WordCloud />
                 </div>
             </div>
         </section>

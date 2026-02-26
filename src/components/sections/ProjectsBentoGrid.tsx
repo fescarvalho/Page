@@ -3,28 +3,40 @@
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import { Project } from "@/types/project";
 
-const projects = [
+import GitHubInsights from "@/components/ui/GitHubInsights";
+
+const projects: Project[] = [
     {
         id: 1,
         title: "Servas — Gestão de Escalas",
-        description: "Sistema completo para automação e gerenciamento de escalas com arquitetura ponta a ponta.",
-        tags: ["Next.js", "Node.js", "Prisma"],
+        description: "Sistema de Gestão de Escalas e Engajamento de Servas para o Santuário Diocesano Nossa Senhora da Natividade.",
+        tags: ["React 19", "TypeScript", "Node.js"],
         className: "md:col-span-2 md:row-span-2",
+        githubUrl: "https://github.com/fescarvalho/ServasProjeto",
+        externalUrl: "https://servasdoaltar.vercel.app/",
+        image: "/projects/servas.png"
     },
     {
         id: 2,
-        title: "Soccer Data Analytics",
-        description: "Plataforma de inteligência de dados esportivos (Champions/Europa League) focada em insights probabilísticos e cruzamento de variáveis.",
-        tags: ["Data Science", "SQL", "Estatística"],
+        title: "Isa Sushi — PDV Online",
+        description: "Plataforma completa no estilo E-commerce / Ponto de Venda focada em delivery, com integração ao WhatsApp e pagamento via Pix.",
+        tags: ["Next.js", "TypeScript", "React"],
         className: "md:col-span-1 md:row-span-1",
+        githubUrl: "https://github.com/fescarvalho/isasuhi-NEXT",
+        externalUrl: "https://isasushidelivery.vercel.app/",
+        image: "/projects/isasushi.png"
     },
     {
         id: 3,
-        title: "Dashboard & DataViz",
-        description: "Interface focada em visualização de métricas complexas e usabilidade.",
-        tags: ["React", "TypeScript", "Tailwind"],
+        title: "Contabilidade Backend",
+        description: "Fundação do sistema provendo rotas RESTful, autenticação, modelagem de banco de dados robusta e manipulação em tempo real.",
+        tags: ["Node.js", "Express", "TypeScript"],
         className: "md:col-span-1 md:row-span-1",
+        githubUrl: "https://github.com/fescarvalho/BACKEND-RENDER",
+        externalUrl: "https://leandro-abreu-contabilidade.vercel.app/",
+        image: "/projects/contabilidade.png"
     }
 ];
 
@@ -66,30 +78,46 @@ export default function ProjectsBentoGrid() {
                                 glareColor="#00FFC2"
                                 glarePosition="all"
                             >
-                                <div className="h-full w-full p-8 rounded-2xl bg-surface border border-white/5 flex flex-col justify-between group hover:border-cyan/50 hover:shadow-[0_0_30px_rgba(0,255,194,0.1)] transition-all overflow-hidden relative">
-                                    {/* Glowing background gradient on hover */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-cyan/5 to-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                                <div className="h-full w-full rounded-2xl bg-surface border border-white/5 flex flex-col group hover:border-cyan/50 hover:shadow-[0_0_30px_rgba(0,255,194,0.1)] transition-all overflow-hidden relative">
+                                    {/* Project Image as Background with Overlay */}
+                                    {project.image && (
+                                        <div
+                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 opacity-30 group-hover:opacity-40"
+                                            style={{ backgroundImage: `url(${project.image})` }}
+                                        />
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/80 to-transparent pointer-events-none" />
 
-                                    <div className="relative z-10">
-                                        <h3 className="text-2xl font-heading font-semibold text-foreground mb-3 group-hover:text-cyan transition-colors">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-foreground/70 font-sans text-sm md:text-base line-clamp-4">
-                                            {project.description}
-                                        </p>
-                                    </div>
-
-                                    <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between mt-6 gap-4">
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tags.map(tag => (
-                                                <span key={tag} className="px-3 py-1 bg-background text-cyan font-mono text-xs rounded border border-cyan/20">
-                                                    {tag}
-                                                </span>
-                                            ))}
+                                    <div className="relative z-10 p-8 flex flex-col h-full justify-between">
+                                        <div>
+                                            <h3 className="text-2xl font-heading font-semibold text-foreground mb-3 group-hover:text-cyan transition-colors">
+                                                {project.title}
+                                            </h3>
+                                            <p className="text-foreground/70 font-sans text-sm md:text-base line-clamp-4">
+                                                {project.description}
+                                            </p>
                                         </div>
-                                        <div className="flex gap-3 text-foreground/50">
-                                            <button className="hover:text-cyan transition-colors"><Github size={20} /></button>
-                                            <button className="hover:text-cyan transition-colors"><ExternalLink size={20} /></button>
+
+                                        <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-6 gap-4">
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.tags.map(tag => (
+                                                    <span key={tag} className="px-3 py-1 bg-background text-cyan font-mono text-xs rounded border border-cyan/20">
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <div className="flex gap-3 text-foreground/50 items-center">
+                                                {project.githubUrl && (
+                                                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">
+                                                        <Github size={20} />
+                                                    </a>
+                                                )}
+                                                {project.externalUrl && (
+                                                    <a href={project.externalUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">
+                                                        <ExternalLink size={20} />
+                                                    </a>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

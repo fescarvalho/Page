@@ -84,7 +84,9 @@ function Word({ position, word }: { position: THREE.Vector3, word: string }) {
     );
 }
 
-export default function SkillsGlobe() {
+import GitHubInsights from "@/components/ui/GitHubInsights";
+
+export default function EcosystemDashboard() {
     return (
         <section id="skills" className="py-24 relative z-10 bg-surface/30">
             <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -99,39 +101,33 @@ export default function SkillsGlobe() {
                     </h2>
                     <div className="h-1 w-20 bg-purple-500 rounded-full shadow-[0_0_10px_rgba(124,58,237,0.5)] mb-8"></div>
                     <p className="text-foreground/70 font-sans text-lg mb-6">
-                        Especializado no ecossistema <span className="text-cyan font-mono">TypeScript / Node.js</span> aplicado desde interfaces interativas de alta fideliade até pipelines de análise de dados.
+                        Domínio completo do ecossistema <span className="text-cyan font-mono">TypeScript / Node.js</span> aplicado desde interfaces de alta performance até engenharia de dados.
                     </p>
                     <div className="flex flex-col gap-4">
                         <div className="bg-surface p-4 rounded-lg border border-white/5 hover:border-cyan/30 transition-colors">
-                            <h4 className="text-cyan font-mono text-sm mb-2">Engenharia Front-end</h4>
-                            <p className="text-foreground/80 text-sm">React, Next.js, Framer Motion, WebGL (React Three Fiber), Tailwind CSS.</p>
+                            <h4 className="text-cyan font-mono text-sm mb-2">Front-end Engineering</h4>
+                            <p className="text-foreground/80 text-sm">React, Next.js, Framer Motion, WebGL (R3F), Tailwind CSS.</p>
                         </div>
                         <div className="bg-surface p-4 rounded-lg border border-white/5 hover:border-purple-400/30 transition-colors">
-                            <h4 className="text-purple-400 font-mono text-sm mb-2">Back-end & Arquitetura</h4>
-                            <p className="text-foreground/80 text-sm">Node.js, Prisma, PostgreSQL, APIs REST/GraphQL, Automação.</p>
+                            <h4 className="text-purple-400 font-mono text-sm mb-2">Back-end & Cloud</h4>
+                            <p className="text-foreground/80 text-sm">Node.js, Express, Prisma, PostgreSQL, REST/GraphQL APIs.</p>
                         </div>
                         <div className="bg-surface p-4 rounded-lg border border-white/5 hover:border-cyan/30 transition-colors">
-                            <h4 className="text-cyan font-mono text-sm mb-2">Ciência de Dados</h4>
-                            <p className="text-foreground/80 text-sm">Análise Estatística, Modelagem de Dados, SQL Avançado, Visualização de Dados.</p>
+                            <h4 className="text-cyan font-mono text-sm mb-2">Data Intelligence</h4>
+                            <p className="text-foreground/80 text-sm">Python, Statistics, SQL, Machine Learning, Data Visualization.</p>
                         </div>
                     </div>
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="h-[500px] md:h-[600px] w-full relative"
+                    className="relative"
                 >
-                    {/* Subtle glow behind the globe */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-cyan/10 blur-[100px] rounded-full pointer-events-none" />
-
-                    <Canvas camera={{ position: [0, 0, 8], fov: 60 }}>
-                        <ambientLight intensity={0.5} />
-                        <TrackballControls noPan noZoom rotateSpeed={2} />
-                        <WordGlobe />
-                    </Canvas>
+                    <div className="absolute -inset-4 bg-cyan/5 blur-3xl rounded-full pointer-events-none" />
+                    <GitHubInsights />
                 </motion.div>
             </div>
         </section>

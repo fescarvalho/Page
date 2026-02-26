@@ -18,9 +18,28 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Portfolio | Data Science & Full Stack",
-  description: "Engenharia de Software & Ciência de Dados",
+  title: "Fernando Carvalho | Portfolio de Engenharia de Software & Ciência de Dados",
+  description: "Portfólio profissional focado em construção de pontes entre a engenharia de software e a inteligência de dados com interfaces modernas.",
+  authors: [{ name: "Fernando Carvalho" }],
+  keywords: ["Software Engineering", "Data Science", "React", "Next.js", "Portfolio"],
+  robots: "index, follow",
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: "https://seu-portfolio.com",
+    title: "Fernando Carvalho | Software Engineering & Data Science",
+    description: "Construindo o futuro através de dados e código.",
+    siteName: "Fernando Carvalho Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fernando Carvalho | Software Engineering & Data Science",
+    description: "Engenharia de Software e Ciência de Dados com foco em performance e modernidade.",
+  },
 };
+
+import CommandPalette from "@/components/ui/CommandPalette";
+import MagneticCursor from "@/components/ui/MagneticCursor";
 
 export default function RootLayout({
   children,
@@ -32,6 +51,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
       >
+        <div className="noise" />
+        <MagneticCursor />
+        <CommandPalette />
         {children}
       </body>
     </html>

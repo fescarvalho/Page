@@ -16,8 +16,8 @@ export default function Home() {
 
       <footer className="py-12 border-t border-white/5 relative z-10 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-foreground/50 font-mono text-sm">
-            © {new Date().getFullYear()} Fernando Carvalho. Todos os direitos reservados.
+          <p className="text-foreground/50 font-mono text-sm leading-tight">
+            © {new Date().getFullYear()} Fernando Carvalho
           </p>
 
           <div className="flex gap-6 text-foreground/50">

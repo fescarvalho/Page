@@ -38,8 +38,8 @@ function Word({ position, word }: { position: THREE.Vector3, word: string }) {
             fontSize={0.4}
             anchorX="center"
             anchorY="middle"
-            transparent
-            opacity={0.8}
+            material-transparent={true}
+            material-opacity={0.8}
             onPointerOver={(e) => { e.stopPropagation(); setHovered(true); document.body.style.cursor = 'pointer'; }}
             onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto'; }}
         >

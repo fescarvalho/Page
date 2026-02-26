@@ -45,10 +45,10 @@ export default function Hero() {
                             <a href="https://github.com/fescarvalho" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
                                 <Github size={24} />
                             </a>
-                            <a href="https://linkedin.com/in/fescarvalho" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
+                            <a href="https://linkedin.com/in/fecarvalhodev" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
                                 <Linkedin size={24} />
                             </a>
-                            <a href="https://instagram.com/fescarvalho" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
+                            <a href="https://instagram.com/fescarv" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors transform hover:scale-110">
                                 <Instagram size={24} />
                             </a>
                         </div>

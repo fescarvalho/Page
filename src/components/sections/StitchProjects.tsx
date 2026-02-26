@@ -25,6 +25,7 @@ const projects: Project[] = [
         tags: ["Next.js", "TypeScript", "React"],
         category: "fullstack",
         year: 2025,
+        featured: true,
         githubUrl: "https://github.com/fescarvalho/isasuhi-NEXT",
         externalUrl: "https://isasushidelivery.vercel.app/",
         image: "/projects/isasushi.png"
@@ -36,7 +37,6 @@ const projects: Project[] = [
         tags: ["React 19", "TypeScript", "Node.js"],
         category: "fullstack",
         year: 2026,
-        featured: true,
         githubUrl: "https://github.com/fescarvalho/ServasProjeto",
         externalUrl: "https://servasdoaltar.vercel.app/",
         image: "/projects/servas.png"

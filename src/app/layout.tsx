@@ -40,10 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-import dynamic from "next/dynamic";
-
-const CommandPalette = dynamic(() => import("@/components/ui/CommandPalette"), { ssr: false });
-const MagneticCursor = dynamic(() => import("@/components/ui/MagneticCursor"), { ssr: false });
+import ClientWrappers from "@/components/ui/ClientWrappers";
 
 export default function RootLayout({
   children,
@@ -52,17 +49,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
-      >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
+      <body
+        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
+      >
         <div className="noise" />
-        <MagneticCursor />
-        <CommandPalette />
+        <ClientWrappers />
         {children}
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>

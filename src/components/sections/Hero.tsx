@@ -166,7 +166,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Version Pin */}
-                <div className="fixed bottom-6 right-8 z-50">
+                <div className="absolute bottom-6 right-8 z-50">
                     <div className="flex items-center gap-3 bg-black/80 backdrop-blur-md px-4 py-2 border border-cyan/20">
                         <span className="font-mono text-xs text-cyan">v2.0.4-blueprint-stable</span>
                         <div className="h-4 w-[1px] bg-cyan/20"></div>

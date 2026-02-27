@@ -63,6 +63,17 @@ const projects: Project[] = [
         image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeRospCpa7K0o27gBOPFdepJOCHMZqC7f0hLpp9ja2D5McboJCMB4ScXHD7SOEsec5pE3n6eLC6mY2MAdatXqZZ6zCt0zjtFgm7F2MhM8_hsWg6a7yT4x2vpU3JDF4v8psf32audDp1vJaFEuF7mmAyPyORQBgaqANnDaf9PRQ51wWkoxf5OUBwAJ54blh1agc_-z19AwZDYBH-qhGnxuT865MR6HBIoq8iERiLaV8HTiKTQ9T_mHruic6AAxSappf1k7NhgLBMyIO"
     },
     {
+        id: 5,
+        title: "Leandro Abreu — Contabilidade",
+        description: "Sistema de contabilidade profissional focado em automação financeira e gestão de processos para escritórios contábeis.",
+        tags: ["React", "Node.js", "TypeScript"],
+        category: "fullstack",
+        year: 2025,
+        githubUrl: "https://github.com/fescarvalho/leandro-abreu-contabilidade",
+        externalUrl: "https://leandro-abreu-contabilidade.vercel.app",
+        image: "/projects/contabilidade.png"
+    },
+    {
         id: 6,
         title: "API-Supermarke-List",
         description: "API escalável para gerenciamento de listas de compras, integrando MongoDB para persistência de dados flexível.",

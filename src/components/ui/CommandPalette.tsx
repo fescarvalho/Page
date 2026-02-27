@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Terminal, X, Command, Search, Hash } from "lucide-react";
+import { Terminal, X, Command, Search } from "lucide-react";
 
 export default function CommandPalette() {
     const [isOpen, setIsOpen] = useState(false);

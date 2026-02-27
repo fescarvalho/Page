@@ -2,7 +2,8 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Code2, Layers, Terminal, Activity, Box } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
     id: number;
@@ -149,9 +150,11 @@ export default function StitchProjects() {
                             >
                                 <div className="absolute inset-0 z-0">
                                     {project.image ? (
-                                        <img
+                                        <Image
                                             src={project.image}
                                             alt={project.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:blur-sm opacity-40"
                                         />
                                     ) : (
@@ -195,7 +198,7 @@ export default function StitchProjects() {
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-xs font-bold text-white bg-primary-stitch hover:bg-primary-stitch/90 px-4 py-2 rounded-lg transition-colors shadow-lg shadow-primary-stitch/20"
                                             >
-                                                <Github size={14} />
+                                                <Github size={14} aria-hidden="true" />
                                                 GitHub
                                             </a>
                                         )}
@@ -206,7 +209,7 @@ export default function StitchProjects() {
                                                 rel="noopener noreferrer"
                                                 className="flex items-center gap-2 text-xs font-bold text-slate-200 bg-[#233648] hover:bg-[#2d465e] px-4 py-2 rounded-lg transition-colors border border-transparent"
                                             >
-                                                <ExternalLink size={14} />
+                                                <ExternalLink size={14} aria-hidden="true" />
                                                 Live
                                             </a>
                                         )}
@@ -220,7 +223,7 @@ export default function StitchProjects() {
                 <div className="flex justify-center mt-16">
                     <button className="group flex items-center gap-2 px-8 py-3 rounded-xl border border-slate-700 text-slate-300 hover:border-primary-stitch hover:text-primary-stitch transition-all bg-[#1a2632] shadow-sm">
                         <span className="font-medium outline-none">Explorar Todos no GitHub</span>
-                        <Github size={20} className="transition-transform group-hover:scale-110" />
+                        <Github size={20} aria-hidden="true" className="transition-transform group-hover:scale-110" />
                     </button>
                 </div>
             </div>

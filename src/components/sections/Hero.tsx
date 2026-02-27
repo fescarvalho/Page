@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Instagram } from "lucide-react";
 import TextScramble from "@/components/ui/TextScramble";
-import WordCloud from "@/components/canvas/WordGlobe";
+import dynamic from "next/dynamic";
+
+const WordCloud = dynamic(() => import("@/components/canvas/WordGlobe"), { ssr: false });
 
 export default function Hero() {
     return (

@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState, useEffect } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useMemo, useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Text, TrackballControls } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -26,8 +26,9 @@ function Word({ position, word }: { position: THREE.Vector3, word: string }) {
             const targetColor = hovered ? "#00FFC2" : "#E0E2E7";
             const targetOpacity = hovered ? 1 : 0.6;
 
-            (ref.current.material as any).color.lerp(color.set(targetColor), 0.1);
-            (ref.current.material as any).opacity = THREE.MathUtils.lerp((ref.current.material as any).opacity, targetOpacity, 0.1);
+            const material = ref.current.material as THREE.MeshBasicMaterial;
+            material.color.lerp(color.set(targetColor), 0.1);
+            material.opacity = THREE.MathUtils.lerp(material.opacity, targetOpacity, 0.1);
         }
     });
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 const skills = [
     { name: "Next.js", level: "Expert Level", icon: "https://cdn.simpleicons.org/nextdotjs/white", pos: "top-[20%] left-1/2 -translate-x-1/2" },
@@ -115,10 +116,12 @@ export default function TechnicalArsenal() {
                         >
                             <div className="relative size-32 md:size-40 rounded-full bg-[#1a2632] border-2 border-primary-stitch/50 flex items-center justify-center shadow-[0_0_50px_rgba(43,140,238,0.3)] transition-transform duration-500 hover:scale-110">
                                 <div className="absolute inset-0 rounded-full bg-primary-stitch/10 scale-125 animate-pulse"></div>
-                                <img
-                                    alt="TypeScript"
+                                <Image
+                                    alt="TypeScript logo"
                                     className="w-20 h-20 md:w-24 md:h-24 object-contain relative z-10"
                                     src="https://cdn.simpleicons.org/typescript"
+                                    width={96}
+                                    height={96}
                                 />
                                 <div className="absolute -bottom-12 flex flex-col items-center whitespace-nowrap">
                                     <span className="text-white font-bold text-xl drop-shadow-md">TypeScript</span>
@@ -138,7 +141,7 @@ export default function TechnicalArsenal() {
                                 className={`absolute ${skill.pos} z-10`}
                             >
                                 <div className="group relative size-20 md:size-24 rounded-full bg-[#1a2632] border border-primary-stitch/30 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-primary-stitch hover:shadow-[0_0_30px_rgba(43,140,238,0.4)]">
-                                    <img alt={skill.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" src={skill.icon} />
+                                    <Image alt={skill.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" src={skill.icon} width={56} height={56} />
 
                                     {/* Label Tooltip-style */}
                                     <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex flex-col items-center whitespace-nowrap -bottom-12">

@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AboutMe() {
     return (
         <section id="about" className="relative py-24 w-full bg-background overflow-hidden border-b border-white/5">
             {/* Grid Overlay inside the section */}
-            <div className="absolute inset-0 grid-overlay opacity-60 pointer-events-none"></div>
+            <div className="absolute inset-0 grid-overlay opacity-60 pointer-events-none" aria-hidden="true"></div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <main className="w-full max-w-7xl mx-auto">
@@ -22,10 +23,13 @@ export default function AboutMe() {
                             >
                                 <div className="absolute -inset-1 bg-primary-stitch/30 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
                                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border-2 border-primary-stitch/40 neon-border bg-slate-800">
-                                    <img
-                                        alt="Professional portrait"
+                                    <Image
+                                        alt="Fernando Carvalho - Professional portrait"
                                         className="w-full h-full object-cover grayscale contrast-125 opacity-80"
                                         src="/profile.jpg"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 400px"
+                                        priority
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-background-dark-stitch via-transparent to-transparent"></div>
                                 </div>

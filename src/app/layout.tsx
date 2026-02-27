@@ -40,8 +40,10 @@ export const metadata: Metadata = {
   },
 };
 
-import CommandPalette from "@/components/ui/CommandPalette";
-import MagneticCursor from "@/components/ui/MagneticCursor";
+import dynamic from "next/dynamic";
+
+const CommandPalette = dynamic(() => import("@/components/ui/CommandPalette"), { ssr: false });
+const MagneticCursor = dynamic(() => import("@/components/ui/MagneticCursor"), { ssr: false });
 
 export default function RootLayout({
   children,
@@ -53,7 +55,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground`}
       >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+      </head>
         <div className="noise" />
         <MagneticCursor />
         <CommandPalette />

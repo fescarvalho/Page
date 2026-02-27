@@ -31,7 +31,7 @@ export default function Contact() {
             } else {
                 alert("Ocorreu um erro ao enviar. Verifique o ID do Formspree.");
             }
-        } catch (error) {
+        } catch {
             alert("Erro de conexão. Tente novamente mais tarde.");
         } finally {
             setIsSubmitting(false);

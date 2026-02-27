@@ -4,35 +4,38 @@ import { useRef, useMemo, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-function DataNodes() {
-    const groupRef = useRef<THREE.Group>(null);
+// Helper to generate static background data outside render component
+const generateBackgroundData = () => {
     const particleCount = 150;
+    const pos = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount; i++) {
+        pos[i * 3] = (Math.random() - 0.5) * 15;
+        pos[i * 3 + 1] = (Math.random() - 0.5) * 15;
+        pos[i * 3 + 2] = (Math.random() - 0.5) * 15;
+    }
 
-    const { positions, linePositions } = useMemo(() => {
-        const pos = new Float32Array(particleCount * 3);
-        for (let i = 0; i < particleCount; i++) {
-            pos[i * 3] = (Math.random() - 0.5) * 15;
-            pos[i * 3 + 1] = (Math.random() - 0.5) * 15;
-            pos[i * 3 + 2] = (Math.random() - 0.5) * 15;
-        }
-
-        const lines = [];
-        for (let i = 0; i < particleCount; i++) {
-            for (let j = i + 1; j < particleCount; j++) {
-                const dx = pos[i * 3] - pos[j * 3];
-                const dy = pos[i * 3 + 1] - pos[j * 3 + 1];
-                const dz = pos[i * 3 + 2] - pos[j * 3 + 2];
-                const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
-                if (dist < 2.5) {
-                    lines.push(
-                        pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2],
-                        pos[j * 3], pos[j * 3 + 1], pos[j * 3 + 2]
-                    );
-                }
+    const lines = [];
+    for (let i = 0; i < particleCount; i++) {
+        for (let j = i + 1; j < particleCount; j++) {
+            const dx = pos[i * 3] - pos[j * 3];
+            const dy = pos[i * 3 + 1] - pos[j * 3 + 1];
+            const dz = pos[i * 3 + 2] - pos[j * 3 + 2];
+            const dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            if (dist < 2.5) {
+                lines.push(
+                    pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2],
+                    pos[j * 3], pos[j * 3 + 1], pos[j * 3 + 2]
+                );
             }
         }
-        return { positions: pos, linePositions: new Float32Array(lines) };
-    }, []);
+    }
+    return { positions: pos, linePositions: new Float32Array(lines) };
+};
+
+function DataNodes() {
+    const groupRef = useRef<THREE.Group>(null);
+
+    const { positions, linePositions } = useMemo(() => generateBackgroundData(), []);
 
     useFrame((state, delta) => {
         if (groupRef.current) {

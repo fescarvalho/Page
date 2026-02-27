@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Text, TrackballControls } from "@react-three/drei";
+import { Text } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 
@@ -63,7 +63,8 @@ function Word({ position, word }: { position: THREE.Vector3, word: string }) {
             ref.current.quaternion.copy(state.camera.quaternion);
 
             // Update color on hover
-            (ref.current.material as any).color.lerp(
+            const material = ref.current.material as THREE.MeshBasicMaterial;
+            material.color.lerp(
                 color.set(hovered ? "#00FFC2" : "#E0E2E7"),
                 0.1
             );
@@ -124,10 +125,18 @@ export default function EcosystemDashboard() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="relative"
+                    className="relative h-[400px]"
                 >
-                    <div className="absolute -inset-4 bg-cyan/5 blur-3xl rounded-full pointer-events-none" />
-                    <GitHubInsights />
+                    <div className="absolute inset-0 z-0">
+                        <Canvas camera={{ position: [0, 0, 10], fov: 35 }}>
+                            <ambientLight intensity={0.5} />
+                            <WordGlobe />
+                        </Canvas>
+                    </div>
+                    <div className="relative z-10">
+                        <div className="absolute -inset-4 bg-cyan/5 blur-3xl rounded-full pointer-events-none" />
+                        <GitHubInsights />
+                    </div>
                 </motion.div>
             </div>
         </section>

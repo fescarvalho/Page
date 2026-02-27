@@ -1,10 +1,12 @@
-import GlobalBackground from "@/components/canvas/GlobalBackground";
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
 import StitchProjects from "@/components/sections/StitchProjects";
 import TechnicalArsenal from "@/components/sections/TechnicalArsenal";
 import Contact from "@/components/sections/Contact";
 import { Github, Linkedin, Instagram } from "lucide-react";
+
+const GlobalBackground = dynamic(() => import("@/components/canvas/GlobalBackground"), { ssr: false });
 
 export default function Home() {
   return (

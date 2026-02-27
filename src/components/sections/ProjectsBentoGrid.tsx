@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Project } from "@/types/project";
 
-import GitHubInsights from "@/components/ui/GitHubInsights";
 
 const projects: Project[] = [
     {

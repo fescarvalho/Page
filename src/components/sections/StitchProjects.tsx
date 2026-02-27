@@ -167,6 +167,7 @@ export default function StitchProjects() {
                                             fill
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:blur-sm opacity-40"
+                                            unoptimized={project.image.startsWith('http')}
                                         />
                                     ) : (
                                         <div className="w-full h-full bg-slate-800 opacity-20" />

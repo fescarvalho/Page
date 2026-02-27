@@ -126,7 +126,7 @@ export default function TechnicalArsenal() {
                                 />
                                 <div className="absolute -bottom-12 flex flex-col items-center whitespace-nowrap">
                                     <span className="text-white font-bold text-xl drop-shadow-md">TypeScript</span>
-                                    <span className="text-primary-stitch text-[10px] uppercase font-bold tracking-widest bg-primary-stitch/20 px-2 rounded border border-primary-stitch/30">Advanced</span>
+                                    <span className="text-primary-stitch text-[10px] uppercase font-bold tracking-widest bg-primary-stitch/20 px-2 rounded border border-primary-stitch/30">Expert</span>
                                 </div>
                             </div>
                         </motion.div>
@@ -144,10 +144,10 @@ export default function TechnicalArsenal() {
                                 <div className="group relative size-20 md:size-24 rounded-full bg-[#1a2632] border border-primary-stitch/30 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:border-primary-stitch hover:shadow-[0_0_30px_rgba(43,140,238,0.4)]">
                                     <Image unoptimized alt={skill.name} className="w-12 h-12 md:w-14 md:h-14 object-contain" src={skill.icon} width={56} height={56} />
 
-                                    {/* Label Tooltip-style */}
-                                    <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex flex-col items-center whitespace-nowrap -bottom-12">
-                                        <span className="text-white font-bold text-sm">{skill.name}</span>
-                                        <span className="text-primary-stitch text-[9px] uppercase font-bold">{skill.level}</span>
+                                    {/* Label Area - Always Visible for Clarity */}
+                                    <div className="absolute flex flex-col items-center whitespace-nowrap -bottom-12">
+                                        <span className="text-white font-bold text-sm tracking-tight">{skill.name}</span>
+                                        <span className="text-cyan text-[10px] uppercase font-black tracking-tighter opacity-80">{skill.level}</span>
                                     </div>
                                 </div>
                             </motion.div>

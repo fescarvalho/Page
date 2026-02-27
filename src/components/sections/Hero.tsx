@@ -36,11 +36,11 @@ export default function Hero() {
                     <span className="absolute -top-3 left-6 blueprint-label">MODULE_ID: HERO_CORE</span>
                     <span className="absolute -bottom-3 right-6 blueprint-label">LOAD_ORDER: 001</span>
 
-                    <h1 className="text-4xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-none text-white text-center uppercase">
-                        Engenharia de <br />
-                        Software <span className="text-cyan">&</span> <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-cyan-400 to-purple">
-                            Ciência de Dados
+                    <h1 className="text-4xl md:text-7xl lg:text-9xl font-heading font-black tracking-tighter leading-none text-white text-center uppercase">
+                        Fernando <br />
+                        Carvalho <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-cyan-400 to-purple text-3xl md:text-5xl lg:text-6xl block mt-4">
+                            Desenvolvedor & Cientista de Dados
                         </span>
                     </h1>
                 </motion.div>

@@ -10,6 +10,8 @@ export default function Hero() {
             <div className="fixed inset-0 bg-grid-blueprint-fine opacity-40 pointer-events-none"></div>
             <div className="fixed inset-0 bg-grid-blueprint opacity-60 pointer-events-none"></div>
 
+
+
             <main className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center pb-32 md:pb-0">
 
                 {/* System Header Labels */}
@@ -33,13 +35,63 @@ export default function Hero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="module-frame w-full p-8 md:p-16 bg-black/40 backdrop-blur-sm relative"
                 >
-                    <span className="absolute -top-3 left-6 blueprint-label">MODULE_ID: HERO_CORE</span>
-                    <span className="absolute -bottom-3 right-6 blueprint-label">LOAD_ORDER: 001</span>
+                    {/* Rectangle Surface Traces */}
+                    <div className="absolute top-0 left-0 -translate-x-full w-[60px] h-[20px] -translate-y-[20px] pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 60 20 H 40 L 20 0 H 0" />
+                            <circle cx="0" cy="0" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute top-0 right-0 translate-x-full w-[80px] h-[20px] -translate-y-[20px] pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 0 20 H 20 L 40 0 H 80" />
+                            <circle cx="80" cy="0" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute bottom-0 left-0 -translate-x-full w-[90px] h-[30px] translate-y-[30px] pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 90 0 H 60 L 30 30 H 0" />
+                            <circle cx="0" cy="30" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute bottom-0 left-[20%] w-[20px] h-[80px] translate-y-full pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 20 0 V 40 L 0 60 V 80" />
+                            <circle cx="0" cy="80" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute bottom-0 left-[35%] w-[10px] h-[100px] translate-y-full pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 0 0 V 30 L 10 40 V 100" />
+                            <circle cx="10" cy="100" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute bottom-0 right-[30%] w-[30px] h-[120px] translate-y-full pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 30 0 V 50 L 0 80 V 120" />
+                            <circle cx="0" cy="120" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute bottom-[20%] right-0 w-[40px] h-[40px] translate-x-full pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 0 0 H 20 L 40 -20 H 60" />
+                            <circle cx="60" cy="-20" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div className="absolute bottom-0 right-[15%] w-[80px] h-[80px] translate-y-full pointer-events-none hidden md:block z-0 text-cyan/40">
+                        <svg className="w-full h-full overflow-visible" fill="none" stroke="currentColor">
+                            <path d="M 0 0 V 40 L 40 80 H 80" />
+                            <circle cx="80" cy="80" r="2" fill="currentColor" />
+                        </svg>
+                    </div>
 
-                    <h1 className="text-4xl md:text-7xl lg:text-9xl font-heading font-black tracking-tighter leading-none text-white text-center uppercase">
-                        Fernando <br />
-                        Carvalho <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-cyan-400 to-purple text-2xl md:text-5xl lg:text-6xl block mt-4">
+                    <span className="absolute -top-3 left-6 blueprint-label z-10">MODULE_ID: HERO_CORE</span>
+                    <span className="absolute -bottom-3 right-6 blueprint-label z-10">LOAD_ORDER: 001</span>
+
+                    <h1 className="text-4xl md:text-7xl lg:text-9xl font-heading font-black tracking-tighter leading-none text-white text-center uppercase flex flex-col items-center">
+                        <span className="[text-shadow:0_0_20px_rgba(0,180,255,0.6),0_0_40px_rgba(0,180,255,0.4)]">Fernando</span>
+                        <span className="[text-shadow:0_0_20px_rgba(0,180,255,0.6),0_0_40px_rgba(0,180,255,0.4)]">Carvalho</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-cyan-400 to-purple text-2xl md:text-5xl lg:text-6xl block mt-4 drop-shadow-none">
                             Desenvolvedor & Cientista de Dados
                         </span>
                     </h1>

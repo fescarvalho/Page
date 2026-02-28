@@ -10,7 +10,7 @@ export default function Hero() {
             <div className="fixed inset-0 bg-grid-blueprint-fine opacity-40 pointer-events-none"></div>
             <div className="fixed inset-0 bg-grid-blueprint opacity-60 pointer-events-none"></div>
 
-            <main className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">
+            <main className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center pb-32 md:pb-0">
 
                 {/* System Header Labels */}
                 <motion.div
@@ -39,14 +39,14 @@ export default function Hero() {
                     <h1 className="text-4xl md:text-7xl lg:text-9xl font-heading font-black tracking-tighter leading-none text-white text-center uppercase">
                         Fernando <br />
                         Carvalho <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-cyan-400 to-purple text-3xl md:text-5xl lg:text-6xl block mt-4">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan via-cyan-400 to-purple text-2xl md:text-5xl lg:text-6xl block mt-4">
                             Desenvolvedor & Cientista de Dados
                         </span>
                     </h1>
                 </motion.div>
 
                 {/* Bottom Metadata & Controls */}
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-4xl relative">
+                <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full max-w-4xl relative">
 
                     {/* Description Block */}
                     <motion.div
@@ -69,10 +69,10 @@ export default function Hero() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
-                        className="flex flex-col items-end gap-4 relative"
+                        className="flex flex-col items-start md:items-end gap-4 relative"
                     >
-                        <div className="absolute -top-8 right-0 connector-line-v"></div>
-                        <div className="pr-4 border-r border-cyan/20 text-right">
+                        <div className="absolute -top-8 left-0 md:left-auto md:right-0 connector-line-v"></div>
+                        <div className="pl-4 md:pl-0 pr-0 md:pr-4 border-l md:border-l-0 md:border-r border-cyan/20 text-left md:text-right">
                             <span className="blueprint-label mb-2 block">EXECUTION_TRIGGER</span>
                             <a className="inline-flex items-center gap-4 group" href="#projects">
                                 <span className="font-mono text-cyan text-lg hover:tracking-widest transition-all duration-300">
@@ -153,28 +153,28 @@ export default function Hero() {
                     </motion.div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="absolute bottom-12 flex flex-col items-center gap-4"
-                >
-                    <span className="blueprint-label">SCROLL_DOWN</span>
-                    <div className="w-[1px] h-20 bg-gradient-to-b from-cyan via-cyan/50 to-transparent relative">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan rounded-full"></div>
-                    </div>
-                </motion.div>
-
-                {/* Version Pin */}
-                <div className="absolute bottom-6 right-8 z-50">
-                    <div className="flex items-center gap-3 bg-black/80 backdrop-blur-md px-4 py-2 border border-cyan/20">
-                        <span className="font-mono text-xs text-cyan">v2.0.4-blueprint-stable</span>
-                        <div className="h-4 w-[1px] bg-cyan/20"></div>
-                        <span className="material-symbols-outlined text-cyan text-sm">architecture</span>
-                    </div>
-                </div>
-
             </main>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 md:gap-4 opacity-70 md:opacity-100"
+            >
+                <span className="blueprint-label hidden md:block">SCROLL_DOWN</span>
+                <div className="w-[1px] h-12 md:h-20 bg-gradient-to-b from-cyan via-cyan/50 to-transparent relative">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-cyan rounded-full"></div>
+                </div>
+            </motion.div>
+
+            {/* Version Pin */}
+            <div className="absolute bottom-4 md:bottom-6 right-4 md:right-8 z-50 hidden sm:block">
+                <div className="flex items-center gap-3 bg-black/80 backdrop-blur-md px-3 md:px-4 py-2 border border-cyan/20">
+                    <span className="font-mono text-[10px] md:text-xs text-cyan">v2.0.4-blueprint-stable</span>
+                    <div className="h-4 w-[1px] bg-cyan/20"></div>
+                    <span className="material-symbols-outlined text-cyan text-xs md:text-sm">architecture</span>
+                </div>
+            </div>
         </section>
     );
 }

@@ -32,6 +32,18 @@ const projects: Project[] = [
         image: "/projects/isasushi.png"
     },
     {
+        id: 9,
+        title: "Vittorya Bazeth — Psicologia Clínica",
+        description: "Landing page profissional para psicóloga clínica, com foco em experiência do usuário, design humanizado e conversão através de agendamento via WhatsApp.",
+        tags: ["Next.js", "React", "Tailwind CSS"],
+        category: "fullstack",
+        year: 2026,
+        featured: true,
+        githubUrl: "https://github.com/fescarvalho/site_vittorya",
+        externalUrl: "https://vittoryabazeth.vercel.app",
+        image: "/projects/vittorya.png"
+    },
+    {
         id: 1,
         title: "Servas — Gestão de Escalas",
         description: "Sistema de Gestão de Escalas e Engajamento de Servas para o Santuário Diocesano Nossa Senhora da Natividade. Arquitetura robusta para alta disponibilidade.",

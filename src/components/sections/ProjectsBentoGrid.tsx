@@ -18,6 +18,16 @@ const projects: Project[] = [
         image: "/projects/servas.png"
     },
     {
+        id: 4,
+        title: "Vittorya Bazeth — Psicologia Clínica",
+        description: "Landing page profissional para psicóloga clínica, com foco em experiência do usuário, design humanizado e conversão através de agendamento via WhatsApp.",
+        tags: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+        className: "md:col-span-1 md:row-span-2",
+        githubUrl: "https://github.com/fescarvalho/site_vittorya",
+        externalUrl: "https://vittoryabazeth.vercel.app",
+        image: "/projects/vittorya.png"
+    },
+    {
         id: 2,
         title: "Isa Sushi — PDV Online",
         description: "Plataforma completa no estilo E-commerce / Ponto de Venda focada em delivery, com integração ao WhatsApp e pagamento via Pix.",
